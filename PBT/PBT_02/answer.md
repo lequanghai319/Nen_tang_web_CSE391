@@ -51,7 +51,53 @@ Liệt kê 10 input types khác nhau trong HTML5:
 ---
 ### PHẦN C — SUY LUẬN 
 ---
+## Câu C1 - Debug form
+1. Lỗi 1: Dòng 2 — Input "Tên" không có <label> đúng chuẩn (chỉ là text thuần),thiếu id, name, required — vi phạm accessibility và validation
+Sửa:
+<label for="name">Tên:</label>
+<input type="text" id="name" name="name" required placeholder="Nguyễn Văn A">
 
+2. Lỗi 2: Dòng 3 — Input email thiếu <label>, thiếu id, name, required
+Sửa:
+<label for="email">Email:</label>
+<input type="email" id="email" name="email" required placeholder="Email của bạn">
+
+3. Lỗi 3: Dòng 4 — Input password thiếu <label>, thiếu id, name, required, minlength
+Sửa:
+<label for="password">Mật khẩu:</label>
+<input type="password" id="password" name="password" required minlength="8"placeholder="Mật khẩu">
+
+4. Lỗi 4: Dòng 5 — Input confirm password thiếu <label>, thiếu id, name
+Sửa:
+<label for="confirm-password">Nhập lại mật khẩu:</label>
+<input type="password" id="confirm-password" name="confirm_password" required minlength="8" placeholder="Nhập lại mật khẩu">
+
+5. Lỗi 5: Dòng 6 — Input phone dùng type="text" thay vì type="tel", thiếu <label>, thiếu id, name, pattern (value="..." không phải placeholder — dữ liệu sẽ được gửi luôn)
+Sửa:
+<label for="phone">Số điện thoại:</label>
+<input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" placeholder="0901234567">
+
+6. Lỗi 6: Dòng 7-10 — <select> thiếu <label>, thiếu id, name,các <option> thiếu value attribute
+Sửa:
+<label for="city">Thành phố:</label>
+<select id="city" name="city" required>
+    <option value="">-- Chọn thành phố --</option>
+    <option value="hanoi">Hà Nội</option>
+    <option value="hcm">TP.HCM</option>
+</select>
+
+7. Lỗi 7: Dòng 11 — <label> không có <input type="checkbox"> bên trong hoặc liên kết for/id — label không có tác dụng, thiếu required
+Sửa:
+<label>
+    <input type="checkbox" name="agree" required>
+    Tôi đồng ý điều khoản
+</label>
+
+8. Lỗi 8: Dòng 13 — Dùng <input type="submit"> thay vì <button type="submit">(best practice hiện đại nên dùng <button> để dễ style hơn ngoài ra <form> thiếu action và method
+Sửa:
+<form action="#" method="POST">
+...
+<button type="submit">Gửi</button>
 
 ---
 ---
