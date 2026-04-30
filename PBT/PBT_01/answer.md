@@ -49,6 +49,7 @@
 </main>
 
 <footer class="footer">© 2026 ShopTLU</footer>
+```
 ---
 
 #### Câu A3 (5đ) — Block vs Inline
@@ -66,3 +67,21 @@ Hộp 3
 * Phần tử Block (`<div>`): sẽ tự động chiếm trọn một hàng ngang và bắt buộc phần tử tiếp theo phải xuống dòng mới. Do đó, Hộp 1, Hộp 2, và Hộp 3 nằm trên 3 dòng riêng biệt.
 * Phần tử Inline (`<span>`, `<strong>`): Chúng chỉ chiếm không gian vừa đủ với nội dung và cho phép các phần tử khác nằm cùng hàng. Vì vậy, Text A nằm cạnh Text B, và Text C nằm cạnh Text D.
 * Thẻ `<strong>` không chỉ nằm cùng dòng mà còn làm cho Text D hiển thị đậm hơn.
+
+---
+
+### Câu A4 (5đ) — Table
+
+#### 1. Sự khác nhau giữa `<thead>`, `<tbody>`, và `<tfoot>`
+
+* `<thead>` (Table Header): Dùng để chứa các tiêu đề cột.
+* `<tbody>` (Table Body): Đây là phần quan trọng nhất, chứa toàn bộ dữ liệu chính của bảng.
+* `<tfoot>` (Table Footer): Dùng để chứa phần ở cuối bảng.
+
+#### 2. Tại sao KHÔNG NÊN dùng table để tạo layout trang web? 
+
+1.  Sai mục đích sử dụng (Semantic): Thẻ `<table>` chỉ được thiết kế để hiển thị dữ liệu dạng bảng (thống kê, so sánh). Dùng nó cho layout làm mất đi tính Semantic của HTML.
+2.  Khó làm Responsive: Layout bằng table rất cứng nhắc, cực kỳ khó để hiển thị đẹp mắt trên các thiết bị di động (mobile).
+3.  Tốc độ tải trang và SEO: Trình duyệt phải tải toàn bộ nội dung trong table rồi mới hiển thị, làm chậm tốc độ tải trang. Đồng thời, cấu trúc table phức tạp khiến các bộ máy tìm kiếm khó đọc và hiểu nội dung trang web.
+
+---
