@@ -11,4 +11,4 @@
 * Công dụng: Tab Network cho phép theo dõi toàn bộ quá trình giao tiếp giữa trình duyệt và máy chủ, bao gồm các tệp tin được tải về, trạng thái phản hồi, dung lượng và thời gian tải thực tế của từng tài nguyên.
 
 * Hình ảnh minh họa:
-(screenshots/A1.png)
+![Hình ảnh minh họa](screenshots/A1.png)
