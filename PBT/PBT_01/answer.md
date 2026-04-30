@@ -1,5 +1,6 @@
+### PHẦN A — KIỂM TRA ĐỌC HIỂU
+---
 ### Câu A1 — HTTP & Browser
-
 #### 1. 5 bước xảy ra khi truy cập https://shopee.vn:
 1. DNS Lookup: Trình duyệt kiểm tra bộ nhớ đệm (cache) hoặc truy vấn máy chủ DNS để chuyển đổi tên miền `shopee.vn` thành địa chỉ IP của máy chủ.
 2. Thiết lập kết nối (TCP & TLS Handshake): Trình duyệt thiết lập kết nối TCP tới server. Vì Shopee sử dụng HTTPS, bước TLS/SSL handshake sẽ diễn ra để mã hóa và bảo mật dữ liệu truyền tải.
