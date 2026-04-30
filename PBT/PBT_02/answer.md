@@ -32,7 +32,7 @@ Liệt kê 10 input types khác nhau trong HTML5:
     * Ba format phổ biến: mp4, webm, ogg.
 
 3. Thuộc tính alt: dùng để cung cấp văn bản thay thế cho hình ảnh khi ảnh không tải được.
-* 3 ví dụ alt tốt:
+* 3 VD alt tốt:
     * iPhone 16: 
        * alt="Điện thoại iPhone 16 Pro màu Tims"
     * Ảnh trang trí: 
@@ -40,10 +40,13 @@ Liệt kê 10 input types khác nhau trong HTML5:
     * Biểu đồ: 
        * alt="Biểu đồ cột biểu diễn doanh thu Quý 1 năm 2026 tăng trưởng 20% so với cùng kỳ"
 ---
----
-
-## PHẦN B — THỰC HÀNH CODE
-
+### Câu A5 (5đ) — So sánh `<figure>` vs `<img>`
+*   Cách 1 (`<img>`): Dùng khi hình ảnh chỉ mang tính chất minh họa thông thường, nằm xen kẽ trong văn bản hoặc không cần chú thích đi kèm. 
+    *   VD1: Logo website trên thanh điều hướng.
+    *   VD2: Ảnh icon nhỏ (như icon giỏ hàng, user).
+*   Cách 2 (`<figure>`): Dùng khi hình ảnh là một khối nội dung độc lập, có ý nghĩa riêng và cần đi kèm dòng chú thích (`<figcaption>`) giải nghĩa cho nó. 
+    *   VD1: Ảnh chi tiết của một sản phẩm có ghi rõ tên và giá ngay bên dưới.
+    *   VD2: Biểu đồ doanh thu tài chính cần có ghi chú tên biểu đồ.
 ---
 ---
 ### PHẦN C — SUY LUẬN 
