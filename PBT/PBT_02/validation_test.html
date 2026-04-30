@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Câu A2 — Validation Test</title>
+</head>
+<body>
+    <h1>Câu A2 — Validation Test</h1>
+    <p>Bấm Submit mỗi form để xem browser validate thực tế.</p>
+
+<form action="#" method="POST" onsubmit="return false;">
+    <!-- Trường hợp 1 -->
+    <div class="case">
+        <h3>Trường hợp 1 — required, value rỗng</h3>
+        <label for="tc1">Nhập text (để trống rồi submit):</label>
+        <input type="text" id="tc1" name="tc1" required value="">
+        <button type="submit">Submit TH1</button>
+    </div>
+</form>
+
+<form action="#" method="POST" onsubmit="return false;">
+    <!-- Trường hợp 2 -->
+    <div class="case">
+        <h3>Trường hợp 2 — type="email", giá trị "abc"</h3>
+        <label for="tc2">Email (đã điền "abc"):</label>
+        <input type="email" id="tc2" name="tc2" value="abc">
+        <button type="submit">Submit TH2</button>
+    </div>
+</form>
+
+<form action="#" method="POST" onsubmit="return false;">
+
+    <!-- Trường hợp 3 -->
+    <div class="case">
+        <h3>Trường hợp 3 — type="number", min=1 max=10, giá trị 15</h3>
+        <label for="tc3">Số (đã điền 15, max=10):</label>
+        <input type="number" id="tc3" name="tc3" min="1" max="10" value="15">
+    </div>
+</form>
+
+<form action="#" method="POST" onsubmit="return false;">
+    <!-- Trường hợp 4 -->
+    <div class="case">
+        <h3>Trường hợp 4 — pattern="[0-9]{10}", giá trị "abc123"</h3>
+        <label for="tc4">Text với pattern 10 số (đã điền "abc123"):</label>
+        <input type="text" id="tc4" name="tc4" pattern="[0-9]{10}" value="abc123">
+        <button type="submit">Submit TH4</button>
+    </div>
+</form>
+
+<form action="#" method="POST" onsubmit="return false;">
+    <!-- Trường hợp 5 -->
+    <div class="case">
+        <h3>Trường hợp 5 — password, minlength=8, giá trị "123"</h3>
+        <label for="tc5">Mật khẩu (đã điền "123", minlength=8):</label>
+        <input type="password" id="tc5" name="tc5" minlength="8" value="123">
+        <button type="submit">Submit TH5</button>
+    </div>
+</form>
+</body>
+</html>
