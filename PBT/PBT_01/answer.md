@@ -59,7 +59,7 @@
 Hộp 1
 Text A Text B
 Hộp 2
-Text C **Text D**
+Text C Text D
 Hộp 3
 
 #### 2. Giải thích
@@ -85,4 +85,21 @@ Hộp 3
 3.  Tốc độ tải trang và SEO: Trình duyệt phải tải toàn bộ nội dung trong table rồi mới hiển thị, làm chậm tốc độ tải trang. Đồng thời, cấu trúc table phức tạp khiến các bộ máy tìm kiếm khó đọc và hiểu nội dung trang web.
 
 ---
+---
 
+## PHẦN B — THỰC HÀNH CODE
+
+### Bài B3 — Debug HTML
+
+Các lỗi đã được tìm và sửa trong file `debug.html`:
+
+1. Thiếu `html` trong DOCTYPE — Sửa: `<!DOCTYPE html>`.
+2. Thiếu thẻ đóng `</title>` — Sửa: Thêm `</title>`.
+3. Sai giá trị `utf8` — Sửa: `UTF-8`.
+4. Đóng `<h1>` sai cú pháp — Sửa: `</h1>`.
+5. Đóng `<a>` sai cú pháp — Sửa: `</a>`.
+6. `<img>` thiếu dấu nháy và `alt` — Sửa: `<img src="iphone.jpg" alt="iPhone 16 Pro">`.
+7. Sai thứ tự lồng thẻ (Nesting) — Sửa: `<p>Giá: <b>...</b></p>`.
+8. Table thiếu `<thead>`, `<tbody>` — Sửa: Thêm thẻ phân đoạn Semantic.
+9.  Dùng thẻ `<main>` lần thứ 2 — Sửa: Thay bằng `<aside>`.
+10. Thiếu thẻ đóng `</p>` ở footer — Sửa: Thêm `</p>`.
