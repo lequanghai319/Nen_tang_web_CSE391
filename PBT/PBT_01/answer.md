@@ -13,8 +13,9 @@
 * Hình ảnh minh họa:
 ![Hình ảnh minh họa](screenshots/A1.png)
 
+---
+
 ### Câu A2 (5đ) — Semantic HTML
-*Nguồn tham chiếu: Chương 04 — PHẦN HIỂN THỊ — Visible Part of HTML*
 
 #### 1. Tại sao trang web bị Google đánh giá SEO thấp? 
 - Trang web mẫu mắc lỗi "Div Soup" sử dụng thẻ `<div>` vô nghĩa cho mọi thành phần. 
@@ -24,32 +25,44 @@
 
 1. Lỗi 1 (Header): Sử dụng `<div class="header">` thay vì thẻ `<header>`.
 2. Lỗi 2 (Navigation): Sử dụng `<div class="menu">` thay vì thẻ `<nav>` cho phần điều hướng.
-3. Lỗi 3 (Main Content): Sử dụng `<div class="main">` thay vì thẻ `<main>` để chứa nội dung cốt lõi.
+3. Lỗi 3 (Main Content): Sử dụng `<div class="main">` thay vì thẻ `<main>` để chứa nội dung chính.
 4. Lỗi 4 (Article/Product): Sử dụng `<div class="product">` cho một đơn vị nội dung độc lập thay vì dùng thẻ `<article>`.
 
 #### 3. Đoạn mã đã sửa lại 
 ```html
-<!-- Cấu trúc chuẩn giúp Google hiểu rõ website của bạn -->
-
-<header>
+<header class="header">
     <div class="logo">ShopTLU</div>
-    <nav>
-        <ul>
-            <li><a href="/">Trang chủ</a></li>
-            <li><a href="/products">Sản phẩm</a></li>
-        </ul>
+    <nav class="menu">
+        <div><a href="/">Trang chủ</a></div>
+        <div><a href="/products">Sản phẩm</a></div>
     </nav>
 </header>
 
-<main>
+<main class="main">
     <article class="product">
-        <h2 class="title">iPhone 16 Pro</h2>
-        <p class="price">25.990.000đ</p>
+        <div class="title">iPhone 16 Pro</div>
+        <div class="price">25.990.000đ</div>
         <figure class="image">
-            <img src="iphone.jpg" alt="Hình ảnh iPhone 16 Pro" loading="lazy">
-            <figcaption>iPhone 16 Pro - Đỉnh cao công nghệ</figcaption>
+            <img src="iphone.jpg" alt="iPhone 16 Pro">
         </figure>
     </article>
 </main>
 
-<footer>© 2026 ShopTLU</footer>
+<footer class="footer">© 2026 ShopTLU</footer>
+---
+
+#### Câu A3 (5đ) — Block vs Inline
+
+#### 1. Kết quả hiển thị (Text Art)
+
+Hộp 1
+Text A Text B
+Hộp 2
+Text C **Text D**
+Hộp 3
+
+#### 2. Giải thích
+
+* Phần tử Block (`<div>`): sẽ tự động chiếm trọn một hàng ngang và bắt buộc phần tử tiếp theo phải xuống dòng mới. Do đó, Hộp 1, Hộp 2, và Hộp 3 nằm trên 3 dòng riêng biệt.
+* Phần tử Inline (`<span>`, `<strong>`): Chúng chỉ chiếm không gian vừa đủ với nội dung và cho phép các phần tử khác nằm cùng hàng. Vì vậy, Text A nằm cạnh Text B, và Text C nằm cạnh Text D.
+* Thẻ `<strong>` không chỉ nằm cùng dòng mà còn làm cho Text D hiển thị đậm hơn.
