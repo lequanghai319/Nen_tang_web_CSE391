@@ -89,7 +89,7 @@ Hộp 3
 
 ## PHẦN B — THỰC HÀNH CODE
 
-### Bài B3 — Debug HTML
+### Câu B3 — Debug HTML
 
 Các lỗi đã được tìm và sửa trong file `debug.html`:
 
@@ -105,7 +105,7 @@ Các lỗi đã được tìm và sửa trong file `debug.html`:
 10. Thiếu thẻ đóng `</p>` ở footer — Sửa: Thêm `</p>`.
 
 ---
-### Bài 4 - Phân tích trang web (thegioididong.com)
+### Câu B4 - Phân tích trang web (thegioididong.com)
 
 ### 1. Các thẻ semantic HTML5 có thể thấy: 
 
@@ -123,6 +123,71 @@ Có dùng thẻ tbody nhưng không dùng thẻ thead
 
 1. Form có action: /tim-kiem ,method: GET 
 2. Input types được dùng:
-    * type="text": Sử dụng ở thẻ <input> để người dùng gõ từ khóa cần tìm.
+    * type="text": Sử dụng ở thẻ `<input>` để người dùng gõ từ khóa cần tìm.
 
-    * type="submit": Sử dụng ở thẻ <button> để tạo nút gửi yêu cầu tìm kiếm.
+    * type="submit": Sử dụng ở thẻ `<`button>` để tạo nút gửi yêu cầu tìm kiếm.
+
+---
+---
+### PHẦN C — SUY LUẬN 
+---
+### Câu C1 - Thiết kế cấu trúc
+```html
+<header> <!-- Chứa thông tin đầu trang -->
+    <nav> <!-- Khu vực điều hướng chính -->
+        <ul><li><a href="#">...</a></li></ul>
+    </nav>
+</header>
+
+<main> <!-- Bọc toàn bộ nội dung chính của trang -->
+    <nav aria-label="breadcrumb"> <!-- Điều hướng phân cấp (Breadcrumb) -->
+        <ol> <!-- Danh sách có thứ tự vì đường dẫn có tính phân cấp -->
+            <li><a href="/">Trang chủ</a></li>
+            <li><a href="/iphone-16">iPhone 16</a></li>
+        </ol>
+    </nav>
+
+    <article> <!-- Nội dung độc lập (toàn bộ thông tin 1 sản phẩm) -->
+        <section id="gallery"> <!-- Phân vùng khu vực ảnh -->
+            <figure><img src="main.jpg" alt="iPhone 16"></figure> <!-- Ảnh chính -->
+            <div class="thumbs">...</div> <!-- Dùng div thuần túy để bọc nhóm ảnh phụ dàn layout -->
+        </section>
+
+        <section id="info"> <!-- Phân vùng thông tin sản phẩm -->
+            <h1>iPhone 16 Pro</h1> <!-- Tiêu đề quan trọng nhất -->
+            <p class="price">25.990.000đ</p> <!-- Đoạn văn bản -->
+            <span class="rating">⭐⭐⭐⭐⭐</span> <!-- Thẻ inline bọc nhóm icon -->
+        </section>
+
+        <section id="specs"> <!-- Phân vùng thông số -->
+            <h2>Thông số kỹ thuật</h2>
+            <table>
+                <tbody> <!-- Chứa dữ liệu của bảng -->
+                    <tr><th>Chip</th><td>A18 Pro</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="reviews"> <!-- Phân vùng bình luận -->
+            <h2>Đánh giá</h2>
+            <article><p>Rất tốt!</p></article> <!-- Dùng article cho 1 bình luận độc lập -->
+        </section>
+    </article>
+
+    <aside> <!-- Sidebar chứa thông tin phụ trợ, liên quan gián tiếp -->
+        <h2>Sản phẩm tương tự</h2>
+    </aside>
+</main>
+
+<footer> <!-- Phần chân trang -->
+    <p>Copyright 2026</p>
+</footer>
+```
+---
+### Câu C2 — So sánh & Tranh luận
+Quan điểm “dùng `<div>` cho mọi thứ là đủ” chỉ tiện lúc đầu, nhưng về kỹ thuật là kém và không bền. Lý do đầu tiên là SEO: công cụ tìm kiếm không chỉ đọc nội dung chữ mà còn đọc cấu trúc trang. Khi sử dụng các thẻ semantic như `<header>`, `<nav>`, `<main>`, `<article>`, Google hiểu rõ đâu là nội dung chính, đâu là điều hướng, từ đó index chính xác và hiệu quả hơn; trong khi một trang toàn `<div>` khiến bot phải đoán, dễ hiểu sai và làm giảm chất lượng SEO. Lý do thứ hai là **Accessibility**: người khiếm thị sử dụng screen reader không dựa vào class CSS mà dựa vào ý nghĩa của thẻ HTML. Ví dụ `<button>` cho biết có thể bấm, `<nav>` cho biết đây là khu điều hướng, `<main>` cho phép nhảy thẳng vào nội dung chính; nếu mọi thứ đều là `<div>` thì screen reader chỉ đọc như văn bản thường, trải nghiệm người dùng rất kém. Một ví dụ đơn giản là trang blog: mỗi bài viết được bọc trong `<article>`, tiêu đề dùng `<h2>`, nội dung là `<p>`, vừa giúp Google hiểu đây là một bài viết độc lập, vừa giúp người dùng (kể cả người khiếm thị) tiếp cận dễ dàng hơn mà không cần code phức tạp. Tuy nhiên, `<div>` vẫn hoàn toàn phù hợp trong các trường hợp chỉ phục vụ **bố cục giao diện**, như container, grid, flex box hoặc các wrapper để căn chỉnh CSS mà không mang ý nghĩa nội dung. Kết luận ngắn gọn cho sinh viên mới: semantic HTML không hề cao siêu, đó là cách viết HTML đúng chuẩn, giúp code rõ ràng, dễ đọc và dễ bảo trì về lâu dài.
+
+---
+---
+### PHẦN D — VIDEO THỰC HÀNH OBS
+---
