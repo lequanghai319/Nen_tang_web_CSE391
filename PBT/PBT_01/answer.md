@@ -103,3 +103,26 @@ Các lỗi đã được tìm và sửa trong file `debug.html`:
 8. Table thiếu `<thead>`, `<tbody>` — Sửa: Thêm thẻ phân đoạn Semantic.
 9.  Dùng thẻ `<main>` lần thứ 2 — Sửa: Thay bằng `<aside>`.
 10. Thiếu thẻ đóng `</p>` ở footer — Sửa: Thêm `</p>`.
+
+---
+### Bài 4 - Phân tích trang web (thegioididong.com)
+
+### 1. Các thẻ semantic HTML5 có thể thấy: 
+
+1. `<header>`: Ở phần trên cùng của trang web, chứa Logo thương hiệu, thanh tìm kiếm và các nút giỏ hàng, tài khoản.
+2. `<section>`: Nằm ở phần nội dung giữa trang (Body), dùng để nhóm một khu vực cụ thể như phần giới thiệu dịch vụ hoặc nhóm sản phẩm.
+3. `<footer>`: Nằm ở dưới cùng của trang web, chứa các thông tin về tổng đài hỗ trợ, địa chỉ công ty và bản quyền.
+
+### 2. Bảng
+1. Nội dung hiển thị:
+Table này hiển thị bảng Thông số kỹ thuật chi tiết của sản phẩm
+2. Có dùng thead, tbody không:
+Có dùng thẻ tbody nhưng không dùng thẻ thead
+
+### 3. Form
+
+1. Form có action: /tim-kiem ,method: GET 
+2. Input types được dùng:
+    * type="text": Sử dụng ở thẻ <input> để người dùng gõ từ khóa cần tìm.
+
+    * type="submit": Sử dụng ở thẻ <button> để tạo nút gửi yêu cầu tìm kiếm.
