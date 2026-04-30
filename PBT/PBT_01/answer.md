@@ -1,4 +1,4 @@
-### Câu A1 (5đ) — HTTP & Browser
+### Câu A1 — HTTP & Browser
 
 #### 1. 5 bước xảy ra khi truy cập https://shopee.vn:
 1. DNS Lookup: Trình duyệt kiểm tra bộ nhớ đệm (cache) hoặc truy vấn máy chủ DNS để chuyển đổi tên miền `shopee.vn` thành địa chỉ IP của máy chủ.
@@ -15,7 +15,7 @@
 
 ---
 
-### Câu A2 (5đ) — Semantic HTML
+### Câu A2 — Semantic HTML
 
 #### 1. Tại sao trang web bị Google đánh giá SEO thấp? 
 - Trang web mẫu mắc lỗi "Div Soup" sử dụng thẻ `<div>` vô nghĩa cho mọi thành phần. 
@@ -52,7 +52,7 @@
 ```
 ---
 
-#### Câu A3 (5đ) — Block vs Inline
+#### Câu A3 — Block vs Inline
 
 #### 1. Kết quả hiển thị (Text Art)
 
@@ -70,7 +70,7 @@ Hộp 3
 
 ---
 
-### Câu A4 (5đ) — Table
+### Câu A4 — Table
 
 #### 1. Sự khác nhau giữa `<thead>`, `<tbody>`, và `<tfoot>`
 
@@ -85,3 +85,4 @@ Hộp 3
 3.  Tốc độ tải trang và SEO: Trình duyệt phải tải toàn bộ nội dung trong table rồi mới hiển thị, làm chậm tốc độ tải trang. Đồng thời, cấu trúc table phức tạp khiến các bộ máy tìm kiếm khó đọc và hiểu nội dung trang web.
 
 ---
+
