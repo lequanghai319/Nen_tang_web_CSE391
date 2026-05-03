@@ -63,23 +63,27 @@ Sửa:
 HTML
 <label for="email">Email:</label>
 <input type="email" id="email" name="email" required placeholder="Email của bạn">
-3. Lỗi 3: Dòng 6 — Input password thiếu <label>, thiếu id, name, required và minlength.Sửa:
 
+3. Lỗi 3: Dòng 6 — Input password thiếu <label>, thiếu id, name, required và minlength.
+Sửa:
 HTML
 <label for="password">Mật khẩu:</label>
 <input type="password" id="password" name="password" required minlength="8" placeholder="Mật khẩu">
-4. Lỗi 4: Dòng 7 — Input nhập lại mật khẩu thiếu <label>, thiếu id, name và các ràng buộc validation tương ứng.Sửa:
 
+4. Lỗi 4: Dòng 7 — Input nhập lại mật khẩu thiếu <label>, thiếu id, name và các ràng buộc validation tương ứng.
+Sửa:
 HTML
 <label for="repass">Nhập lại mật khẩu:</label>
 <input type="password" id="repass" name="repass" required minlength="8" placeholder="Nhập lại mật khẩu">
-5. Lỗi 5: Dòng 9 — Input phone dùng type="text" thay vì type="tel", thiếu <label>, id, name và pattern. (Sử dụng placeholder thay vì value để người dùng không phải xóa dữ liệu mẫu).Sửa:
 
+5. Lỗi 5: Dòng 9 — Input phone dùng type="text" thay vì type="tel", thiếu <label>, id, name và pattern. (Sử dụng placeholder thay vì value để người dùng không phải xóa dữ liệu mẫu).
+Sửa:
 HTML
 <label for="phone">Số điện thoại:</label>
 <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" placeholder="0901234567">
-6. Lỗi 6: Dòng 11-14 — Thẻ <select> thiếu <label>, id, name và các thẻ <option> bên trong thiếu thuộc tính value.Sửa:
 
+6. Lỗi 6: Dòng 11-14 — Thẻ <select> thiếu <label>, id, name và các thẻ <option> bên trong thiếu thuộc tính value.
+Sửa:
 HTML
 <label for="city">Thành phố:</label>
 <select id="city" name="city" required>
@@ -87,20 +91,40 @@ HTML
     <option value="hanoi">Hà Nội</option>
     <option value="hcm">TP.HCM</option>
 </select>
-7. Lỗi 7: Dòng 16 — Thẻ <label> bọc nội dung nhưng thiếu ô <input type="checkbox"> thực tế bên trong, thiếu thuộc tính required.Sửa:
-
+7. Lỗi 7: Dòng 16 — Thẻ <label> bọc nội dung nhưng thiếu ô <input type="checkbox"> thực tế bên trong, thiếu thuộc tính required.
+Sửa:
 HTML
 <label>
     <input type="checkbox" name="agree" required>
     Tôi đồng ý điều khoản
 </label>
-8. Lỗi 8: Dòng 1 — Thẻ <form> thiếu action và method. Dòng 18 nên dùng thẻ <button> thay vì <input type="submit"> để dễ dàng tùy chỉnh giao diện hơn.Sửa:
 
-HTML
+8. Lỗi 8: Dòng 1 — Thẻ <form> thiếu action và method. Dòng 18 nên dùng thẻ <button> thay vì <input type="submit"> để dễ dàng tùy chỉnh giao diện hơn.
+Sửa:
 <form action="#" method="POST">
     <!-- Nội dung form -->
     <button type="submit">Gửi</button>
 </form>
+
+---
+## Câu C2 (10đ) — Thiết kế chiến lược Validation
+1. Viết pattern regex:
+*   CMND/CCCD (Đúng 12 chữ số): `pattern="[0-9]{12}"`
+*   Số tài khoản (10-15 chữ số): `pattern="[0-9]{10,15}"`
+
+
+2. HTML5 validation đủ an toàn cho ứng dụng ngân hàng chưa? Tại sao?
+*   Hoàn toàn CHƯA an toàn.
+*   Vì HTML5 Validation chỉ hoạt động ở phía Frontend (trình duyệt người dùng) với mục đích chính là cải thiện UI/UX (báo lỗi nhanh chóng mà không cần tải lại trang). Người dùng có kiến thức kỹ thuật có thể dễ dàng qua mặt bằng cách ấn F12 (DevTools) để xóa bỏ các thuộc tính như `required`, `pattern`, `maxlength` ra khỏi mã HTML. Ngoài ra, hacker có thể dùng các công cụ như Postman hoặc cURL để gửi trực tiếp dữ liệu (Request) đến máy chủ (Server) mà không cần đi qua giao diện web.
+
+3. 3 loại validation mà HTML5 KHÔNG THỂ làm được
+   1.  Cross-field Validation: So sánh giá trị giữa hai ô nhập liệu khác nhau. Ví dụ: Không thể dùng HTML5 để so sánh ô "Mật khẩu" và ô "Nhập lại mật khẩu" xem có khớp nhau hay không.
+   2.  Asynchronous Validation: Không thể kiểm tra xem Số CMND/CCCD hoặc Email đăng ký đã tồn tại trong cơ sở dữ liệu của ngân hàng hay chưa.
+   3.  Kiểm tra logic nghiệp vụ phức tạp: Không thể tính toán dựa trên dữ liệu nhập vào. Ví dụ: Dựa vào input "Ngày sinh" để tự động tính toán xem khách hàng đã đủ 18 tuổi để mở tài khoản hay chưa.
+
+4. 2 rủi ro bảo mật nếu chỉ validate trên Frontend mà không validate Backend:
+   1.  Lỗ hổng Injection (SQL Injection / XSS): Kẻ tấn công có thể dễ dàng vượt qua Frontend để gửi các chuỗi mã độc, script hoặc câu lệnh truy vấn độc hại thẳng vào máy chủ. Điều này có thể dẫn đến việc toàn bộ cơ sở dữ liệu ngân hàng bị đánh cắp, chỉnh sửa hoặc xóa sạch.
+   2.  Data Integrity: Kẻ xấu có thể cố tình gửi lên các dữ liệu sai định dạng (VD: nhập số dư tài khoản là số âm, nhập tuổi là chữ cái). Khi lọt vào Database, những dữ liệu "rác" này sẽ làm sai lệch các phép tính toán nghiệp vụ của ngân hàng, gây lỗi (crash) máy chủ và làm gián đoạn toàn bộ hệ thống.
 ---
 ### PHẦN D — VIDEO THỰC HÀNH OBS
 ---
