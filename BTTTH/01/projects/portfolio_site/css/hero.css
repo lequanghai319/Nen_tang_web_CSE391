@@ -39,7 +39,7 @@
     background-color: var(--color-secondary);
 }
 
-/* Breakpoints Mobile */
+
 @media (max-width: 768px) {
     .hero h1 {
         font-size: 2.5rem;

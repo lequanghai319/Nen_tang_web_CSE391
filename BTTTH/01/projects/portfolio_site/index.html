@@ -8,13 +8,14 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/skills.css">
 </head>
 <body>
     <header>
         <div class="logo">Lê Quang Hải</div>
         <input type="checkbox" id="menu-toggle" class="menu-toggle">
         <label for="menu-toggle" class="hamburger">&#9776;</label>
-        
         <nav>
             <a href="#about">About</a>
             <a href="#skills">Skills</a>
@@ -25,9 +26,61 @@
     <main>
         <section id="hero" class="hero">
             <h1>Hi, I'm Lê Quang Hải</h1>
-            <p>Sinh viên K66 CNTT | Đại học Thủy Lợi | Developer  </p>
+            <p>Sinh viên K66 CNTT | Đại học Thủy Lợi | Developer</p>
             <a href="#portfolio" class="cta-button">View My Work</a>
         </section>
+
+
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-image">
+                        <img src="https://via.placeholder.com/300x300" alt="Lê Quang Hải">
+                    </div>
+                    <div class="about-content">
+                        <h2>Về Bản Thân</h2>
+                        <p class="lead">Sinh viên K66 ngành Công nghệ Thông tin tại Đại học Thủy Lợi.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="skills" class="skills-section">
+            <div class="container">
+                <h2>Kỹ Năng Nổi Bật</h2>
+                <div class="skills-grid">
+
+                    <div class="skill-item">
+                        <span class="skill-name">HTML5 / CSS</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="90%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <span class="skill-name">JavaScript</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="75%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <span class="skill-name">React</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="60%"></div>
+                        </div>
+                    </div>
+  
+                    <div class="skill-item">
+                        <span class="skill-name">C++ / Python </span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="85%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
+    <script src="js/main.js"></script>
 </body>
 </html>
