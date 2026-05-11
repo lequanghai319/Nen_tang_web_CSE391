@@ -26,33 +26,55 @@
 ┌─────────┬─────────┬─────────┬─────────┐
 │  Item 1 │  Item 2 │  Item 3 │  Item 4 │
 └─────────┴─────────┴─────────┴─────────┘
+```
 
 2. Trường hợp 2:
 - Bố cục: Gồm 3 hàng, mỗi hàng có 2 cột. (Mỗi item chiếm 45% width + 5% margin 2 bên = 50%. Hai item là 100% lấp đầy 1 hàng, item thứ 3 sẽ bị rớt xuống hàng dưới do `flex-wrap: wrap`).
-- Sơ đồ text art:
-  `[ Item 1 ] [ Item 2 ]`
-  `[ Item 3 ] [ Item 4 ]`
-  `[ Item 5 ] [ Item 6 ]`
+- Sơ đồ bố cục:
+```text
+┌─────────┬─────────┐
+│  Item 1 │  Item 2 │
+├─────────┼─────────┤
+│  Item 3 │  Item 4 │
+├─────────┼─────────┤
+│  Item 5 │  Item 6 │
+└─────────┴─────────┘
+```
 
 3. Trường hợp 3:
 - Bố cục: 1 hàng ngang. Item 1 dính sát lề trái, Item 2 ở chính giữa, Item 3 dính sát lề phải. Cả 3 item đều được căn giữa theo chiều dọc.
-- Sơ đồ text art:
-  `[ Item 1 ]                 [ Item 2 ]                 [ Item 3 ]`
+- Sơ đồ bố cục:
+```text
+┌───────────────────────────────────────────┐
+│ [Item 1]         [Item 2]         [Item 3]│
+└───────────────────────────────────────────┘
+```
 
 4. Trường hợp 4:
 - Bố cục: 1 hàng ngang, 3 cột. Cột trái cố định 200px, cột phải cố định 200px. Cột giữa (1fr) sẽ phình to ra chiếm toàn bộ khoảng trống còn lại. Có khe hở (gap) 20px giữa các cột.
-- Sơ đồ text art:
-  `[ 200px ] [========= 1fr (Co giãn) =========] [ 200px ]`
+- Sơ đồ bố cục:
+```text
+┌─────────┬─────────────────────────┬───────┐
+│  200px  │      1fr (Co giãn)      │ 200px │
+└─────────┴─────────────────────────┴───────┘
+```
 
 5. Trường hợp 5:
 - Bố cục: Lưới 3 cột có kích thước bằng nhau, khe hở 10px. Tổng cộng có 3 hàng.
   - Hàng 1: 3 items
   - Hàng 2: 3 items
   - Hàng 3: 1 item (Item thứ 7 sẽ nằm ở góc dưới cùng bên trái, cột đầu tiên).
-- Sơ đồ text art:
-  `[ Item 1 ] [ Item 2 ] [ Item 3 ]`
-  `[ Item 4 ] [ Item 5 ] [ Item 6 ]`
-  `[ Item 7 ] [ Trống  ] [ Trống  ]`
+- Sơ đồ bố cục:
+```text
+┌─────────┬─────────┬─────────┐
+│  Item 1 │  Item 2 │  Item 3 │
+├─────────┼─────────┼─────────┤
+│  Item 4 │  Item 5 │  Item 6 │
+├─────────┼─────────┼─────────┤
+│  Item 7 │ (Trống) │ (Trống) │
+└─────────┴─────────┴─────────┘
+```
+
 ---
 ---
 ## PHẦN B — THỰC HÀNH CODE (Ghi chú đáp án)
