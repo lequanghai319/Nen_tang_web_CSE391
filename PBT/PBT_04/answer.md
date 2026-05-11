@@ -74,16 +74,60 @@
 │  Item 7 │ (Trống) │ (Trống) │
 └─────────┴─────────┴─────────┘
 ```
-
----
----
-## PHẦN B — THỰC HÀNH CODE (Ghi chú đáp án)
----
 ---
 ---
 ### PHẦN C — SUY LUẬN 
 ---
+### Câu C1 (10đ) — Flexbox vs Grid: Khi nào dùng gì?
 
+| Tình huống | Công cụ | Giải thích |
+|:---|:---|:---|
+| 1. Navigation bar ngang | **Flexbox** | Đây là bố cục 1 chiều (hàng ngang). Flexbox giúp căn giữa các mục theo chiều dọc (`align-items: center`) và phân bổ khoảng cách (`justify-content`) cực kỳ linh hoạt. |
+| 2. Lưới ảnh Instagram | **Grid** | Đây là bố cục 2 chiều (hàng và cột) cố định. Grid giúp tạo 3 cột đều nhau (`repeat(3, 1fr)`) rất nhanh và tự động quản lý các hàng khi số lượng ảnh tăng lên. |
+| 3. Layout blog (Main + Sidebar) | **Grid** | Phù hợp để xây dựng khung sườn lớn (macro-layout) cho trang web. Grid cho phép định nghĩa các vùng diện tích (`grid-template-areas`) rõ ràng cho Content và Sidebar. |
+| 4. Footer 4 cột thông tin | **Grid** | Grid giúp chia trang thành 4 cột bằng nhau một cách tuyệt đối, đảm bảo tính thẩm mỹ và đồng nhất ngay cả khi nội dung bên trong các cột có độ dài khác nhau. |
+| 5. Card sản phẩm (nút dính đáy) | **Flexbox** | Bố cục 1 chiều (theo cột dọc). Khi dùng `flex-direction: column`, thuộc tính `margin-top: auto` cho nút bấm sẽ giúp nó luôn "dính" chặt ở đáy card bất kể phần text phía trên dài hay ngắn. |
+
+---
+
+### Câu C2 (10đ) — Debug Flexbox
+
+1. Lỗi 1: Cards không đều chiều cao — nút "Mua" bị nhảy lên/xuống
+- Nguyên nhân: Mặc dù container dùng flex làm các card có chiều cao bằng nhau, nhưng nội dung bên trong card vẫn theo luồng mặc định. Nếu tên sản phẩm quá dài hoặc quá ngắn, nút bấm sẽ bị đẩy đi lệch hàng.
+- Cách sửa: Biến chính thẻ `.card` thành một Flex container theo chiều dọc và dùng `margin-top: auto` cho nút bấm.
+- Code sửa:
+```css
+.card {
+    display: flex;
+    flex-direction: column;
+}
+.card .btn {
+    margin-top: auto;
+}
+```
+2. Lỗi 2: Items không nằm giữa dù đã dùng flex
+- Nguyên nhân: Thuộc tính `display: flex` mới chỉ khởi tạo môi trường. Để căn giữa cả ngang và dọc cho phần tử con trong không gian `100vh`, cần thêm các lệnh điều hướng trục.
+- Cách sửa: Sử dụng `justify-content` để căn giữa theo trục ngang và `align-items` để căn giữa theo trục dọc.
+- Code sửa:
+```css
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+```
+
+3. Lỗi 3: Sidebar bị co lại khi content quá dài
+- Nguyên nhân: Mặc định các phần tử con trong Flexbox có `flex-shrink: 1`, khiến chúng tự co lại để nhường chỗ khi phần nội dung chính (content) quá lớn.
+- Cách sửa: Cấm sidebar co lại bằng cách thiết lập `flex-shrink: 0`.
+- Code sửa:
+```css
+.sidebar {
+    width: 250px;
+    flex-shrink: 0;
+}
+```
 ---
 ---
 ### PHẦN D — VIDEO THỰC HÀNH OBS
