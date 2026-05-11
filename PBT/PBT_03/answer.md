@@ -83,7 +83,7 @@
 - Hộp 2 (border-box): chiều rộng hiển thị thực tế = 300px - Giải thích sự khác biệt: 
 - `content-box` chỉ gán kích thước 300px cho phần content lõi bên trong. Khi thêm padding và border, nó sẽ cộng dồn ra ngoài làm hộp phình to lên.
 - `border-box` gán kích thước 300px cho tổng thể toàn bộ hộp. Khi thêm padding và border, nó sẽ tự động bóp nhỏ phần content lõi bên trong lại để giữ nguyên tổng kích thước không đổi.
-
+---
 ### Bài B3 — Specificity Battle
 1. Danh sách 10 Rules (Từ thấp đến cao):
   ```css
@@ -119,6 +119,8 @@
    - Cách 1 (Tốt nhất): Thêm thuộc tính `box-sizing: border-box;` vào `.sidebar` và `.content` để trình duyệt tự động ép kích thước tổng không bị phình ra do padding/border.
    - Cách 2 (Sửa thủ công): Tính toán và giảm width của `.sidebar` xuống `258px` (300 - 42) và `.content` xuống `598px` (660 - 62).
 
+---
+
 ### Câu C2 — Cascade Puzzle
 
 1. "Sản phẩm A" (h2): `font-size` = **20px** (Lấy từ `.card .title`), `color` = green (Lấy từ `.highlight { color: green !important; }`, từ khóa `!important` đánh bại cả ID `#featured`).
@@ -128,7 +130,7 @@
    - Giải thích: Thẻ heading (`h2`) không tự động thừa kế (inherit) màu chữ từ div cha. Do không có rule nào set màu cụ thể cho thẻ h2 này, nó sẽ lấy màu mặc định được kế thừa từ thẻ `body` là `#333`.
 4. "Mô tả sản phẩm B" (p.highlight): `color` = green.
    - Giải thích: Thẻ này có class `highlight`, mà trong file CSS selector `.highlight` có sử dụng thuộc tính `!important` nên nó ép thẻ `p` phải đổi thành màu xanh green bất chấp quy tắc thông thường.
-
+---
 ---
 ### PHẦN D — VIDEO THỰC HÀNH OBS
 ---

@@ -1,0 +1,98 @@
+/* YÊU CẦU 1: Dòng đầu tiên reset Box Model */
+* {
+    box-sizing: border-box;
+}
+
+/* YÊU CẦU 2: Body Typography & Color */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8fafc;
+    color: #1e293b;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* YÊU CẦU 3: Header với Gradient và Padding */
+header {
+    background: linear-gradient(135deg, #1e293b 0%, #3b82f6 100%);
+    color: white;
+    padding: 40px 20px; /* Padding ít nhất 20px */
+    text-align: center;
+}
+
+/* YÊU CẦU 4: Navigation links (Sử dụng Descendant Selector) */
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none; 
+    color: #cbd5e1; 
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+
+nav ul li a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+
+nav ul li a.active {
+    color: white;
+    border-bottom: 2px solid white;
+    padding-bottom: 5px;
+}
+
+/* YÊU CẦU 5: Table Kỹ năng */
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse; 
+    margin-top: 20px;
+    background: white;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #e2e8f0;
+    text-align: left;
+}
+
+thead tr {
+    background-color: #1e293b;
+    color: white;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f1f5f9;
+}
+
+tbody tr:hover {
+    background-color: #e2e8f0;
+}
+
+/* YÊU CẦU 6: Footer  */
+footer {
+    background-color: #0f172a; /* Background đậm */
+    color: #94a3b8; /* Text nhạt */
+    text-align: center; /* Căn giữa */
+    padding: 20px;
+    margin-top: 40px;
+}
+#contact {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border-top: 2px dashed #cbd5e1;
+}
