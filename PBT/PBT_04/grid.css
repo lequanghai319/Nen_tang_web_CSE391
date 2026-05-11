@@ -1,0 +1,97 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Arial, sans-serif; background-color: #f0f2f5; padding: 20px; }
+
+
+.ecommerce-layout {
+    display: grid;
+    
+   
+    grid-template-columns: 200px minmax(300px, 1fr) 200px; 
+    
+
+    grid-template-areas: 
+        "header header header"
+        "hero hero hero"
+        "sidebar main ads"
+        "footer footer footer";
+        
+    gap: 20px; 
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+.header { 
+    grid-area: header; 
+    background: #ff4b4b; color: white; padding: 20px; text-align: center; border-radius: 8px;
+}
+
+.footer { 
+    grid-area: footer; 
+    background: #333; color: white; padding: 20px; text-align: center; border-radius: 8px;
+}
+
+.sidebar { 
+    grid-area: sidebar; 
+    background: white; padding: 20px; border-radius: 8px; border: 1px solid #ddd;
+}
+
+.ads { 
+    grid-area: ads; 
+    background: white; padding: 10px; border-radius: 8px; border: 1px solid #ddd; text-align: center;
+}
+
+
+.hero {
+    grid-area: hero;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.hero-card {
+    background: linear-gradient(45deg, #fd297b, #ff655b);
+    color: white;
+    padding: 30px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.hero-card.featured {
+    grid-column: span 2; 
+    background: linear-gradient(45deg, #ff9900, #ff4b4b);
+}
+
+.main-content {
+    grid-area: main;
+    display: grid;
+  
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 15px;
+}
+
+
+.product-card {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card img { width: 100%; border-radius: 5px; margin-bottom: 10px; }
+.product-card h4 { color: #333; font-size: 16px; margin-bottom: 5px; }
+.product-card .price { color: #fd297b; font-weight: bold; margin-bottom: 15px; }
+
+.product-card button {
+    margin-top: auto;
+    background: #333; color: white; border: none; padding: 10px; border-radius: 5px; cursor: pointer;
+}
+.product-card button:hover { background: #fd297b; }
+
+.filter-group { margin-top: 15px; line-height: 2; color: #555; }
