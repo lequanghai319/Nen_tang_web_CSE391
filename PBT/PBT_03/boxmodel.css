@@ -24,3 +24,34 @@ body {
 .box-border {
     box-sizing: border-box;
 }
+
+.layout-container {
+    width: 1000px;
+    border: 2px solid #333;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #eee;
+    margin-bottom: 50px;
+}
+
+.sidebar, .ads {
+    width: 250px;
+    padding: 15px;
+    background-color: #d1d8e0;
+}
+
+.content {
+    width: 500px;
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+
+.broken div {
+    box-sizing: content-box;
+}
+
+
+.fixed div {
+    box-sizing: border-box;
+}
