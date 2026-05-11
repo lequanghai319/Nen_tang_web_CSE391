@@ -1,0 +1,36 @@
+.container {
+    width: 960px;
+    margin: 20px auto;
+    background-color: #f0f0f0;
+    overflow: hidden; /* Clear float */
+    padding-bottom: 20px;
+}
+
+.sidebar {
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    float: left;
+    background-color: #ffcccc;
+}
+
+.content {
+    width: 660px;
+    padding: 30px;
+    border: 1px solid #ccc;
+    float: left;
+    background-color: #ccffcc;
+}
+
+.fix-border-box .sidebar,
+.fix-border-box .content {
+    box-sizing: border-box;
+}
+
+.fix-manual-width .sidebar {
+    width: 258px;
+}
+
+.fix-manual-width .content {
+    width: 598px;
+}
