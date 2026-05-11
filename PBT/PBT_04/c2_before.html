@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Before - Lỗi Flexbox</title>
+    <style>
+        body { font-family: Arial; background: #eee; padding: 20px; }
+        .section { margin-bottom: 50px; background: white; border: 2px dashed red; padding: 10px; }
+        
+        /* --- LỖI 1 --- */
+        .card-container { display: flex; flex-wrap: wrap; }
+        .card { width: 30%; margin: 1.5%; border: 1px solid #000; background: #f9f9f9; }
+        .card img { width: 100%; height: 100px; background: #ccc; }
+        .card .btn { padding: 10px; background: #ff4b4b; color: white; border: none; width: 100%; }
+
+        /* --- LỖI 2 --- */
+        .hero { height: 300px; display: flex; background: #333; border: 2px solid blue; }
+        .hero-content { background: #ff4b4b; color: white; padding: 20px; }
+
+        /* --- LỖI 3 --- */
+        .layout { display: flex; border: 2px solid green; }
+        .sidebar { width: 250px; background: orange; padding: 20px; }
+        .content { flex: 1; background: #fff; padding: 20px; word-wrap: break-word; }
+    </style>
+</head>
+<body>
+
+    <div class="section">
+        <h3>Lỗi 1: Nút Mua nhảy lộn xộn</h3>
+        <div class="card-container">
+            <div class="card">
+                <img src="" alt="Ảnh">
+                <h3>Sản phẩm A</h3>
+                <p>Chữ cực kỳ ngắn.</p>
+                <button class="btn">Mua</button>
+            </div>
+            <div class="card">
+                <img src="" alt="Ảnh">
+                <h3>Sản phẩm B</h3>
+                <p>Chữ dài dòng lê thê viết hoài không hết để xem cái nút nó bị đẩy đi đâu nhé.</p>
+                <button class="btn">Mua</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>Lỗi 2: Lệch góc trái</h3>
+        <div class="hero">
+            <div class="hero-content">Khối cần ra giữa</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>Lỗi 3: Sidebar bị ép nhỏ</h3>
+        <div class="layout">
+            <div class="sidebar">Tôi là Sidebar 250px</div>
+            <div class="content">Nội dung siêu dài: MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM</div>
+        </div>
+    </div>
+
+</body>
+</html>
