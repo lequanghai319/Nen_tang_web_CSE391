@@ -78,6 +78,29 @@
 ---
 ## PHẦN B — THỰC HÀNH CODE (Ghi chú đáp án)
 ---
+### Bài B1 — Style trang Profile
+Liệt kê các loại Selector đã sử dụng trong file style.css để thỏa mãn yêu cầu đề bài:
+1.  Element Selector: 
+    - Sử dụng cho các thẻ: `body`, `header`, `main`, `table`, `th`, `td`, `footer`. 
+    - Mục đích: Thiết lập các định dạng cơ bản như font chữ, màu nền và khoảng cách cho toàn bộ trang.
+
+2.  Class Selector: 
+    - Sử dụng: `.active`. 
+    - Mục đích: Tạo kiểu dáng nổi bật riêng biệt cho link điều hướng đang được truy cập (có màu chữ trắng và đường gạch chân).
+
+3.  ID Selector: 
+    - Sử dụng: `#contact`. 
+    - Mục đích: Chọn duy nhất phần "Thông tin liên hệ" (`aside`) để thiết lập đường kẻ ngăn cách (border-top) và khoảng cách lề.
+
+4.  Descendant Selector: 
+    - Sử dụng: `nav ul li a`. 
+    - Mục đích: Chỉ tác động vào các thẻ `<a>` nằm sâu bên trong cấu trúc của thanh điều hướng (`nav`), tránh làm ảnh hưởng đến các thẻ `<a>` khác nếu có trong bài.
+
+5.  Pseudo-class Selector (Bộ chọn lớp giả): 
+    - Sử dụng: `:hover` (cho link và dòng trong bảng) và `:nth-child(even)` (cho bảng). 
+    - Mục đích: - `:hover`: Tạo hiệu ứng đổi màu khi di chuột vào menu và các dòng trong bảng kỹ năng.
+    - `:nth-child(even)`: Tạo hiệu ứng "vằn ngựa" (Zebra striping) giúp các dòng chẵn trong bảng có màu nền khác biệt, dễ quan sát hơn.
+---
 ### Bài B2 — Box Model Lab (Phần 1)
 - Hộp 1 (content-box): chiều rộng hiển thị thực tế = 350px (300 + 20*2 + 5*2)
 - Hộp 2 (border-box): chiều rộng hiển thị thực tế = 300px - Giải thích sự khác biệt: 
