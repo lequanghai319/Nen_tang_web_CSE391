@@ -1,0 +1,115 @@
+/* --- PORTFOLIO SECTION --- */
+.portfolio-section {
+    padding: 100px 0;
+}
+
+.portfolio-filters {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.filter-btn {
+    background: transparent;
+    border: 2px solid var(--color-primary);
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    color: var(--color-primary);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--color-primary);
+    color: white;
+}
+
+/* --- GRID LAYOUT --- */
+.portfolio-grid {
+    display: grid;
+    /* Responsive không cần media queries: tự chia cột dựa trên độ rộng 300px */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.portfolio-item img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.1); /* Zoom Effect */
+}
+
+/* --- OVERLAY --- */
+.portfolio-overlay {
+    position: absolute;
+    inset: 0;
+    /* Gradient tối dần từ dưới lên để nổi bật chữ */
+    background: linear-gradient(to top, rgba(30, 41, 59, 0.95) 0%, rgba(30, 41, 59, 0.4) 60%, transparent 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: white;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    opacity: 1;
+}
+
+.portfolio-overlay h3 { margin-bottom: 5px; font-size: 1.2rem; }
+.portfolio-overlay p { font-size: 0.9rem; opacity: 0.8; }
+
+/* --- CSS LIGHTBOX (:target kỹ thuật chính) --- */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 2000;
+    padding: 20px;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 80vh;
+    border-radius: 8px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+}
+
+/* Khi URL có hash trùng với ID của lightbox (VD: #lightbox-1) */
+.lightbox:target {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    font-size: 3rem;
+    color: white;
+    text-decoration: none;
+    line-height: 1;
+}
