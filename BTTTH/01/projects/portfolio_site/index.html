@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="css/about.css">
     <link rel="stylesheet" href="css/skills.css">
     <link rel="stylesheet" href="css/portfolio.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
     <header>
@@ -31,6 +33,7 @@
             <p>Sinh viên K66 CNTT | Đại học Thủy Lợi | Developer</p>
             <a href="#portfolio" class="cta-button">View My Work</a>
         </section>
+
         <section id="about" class="about-section">
             <div class="container">
                 <div class="about-grid">
@@ -44,6 +47,7 @@
                 </div>
             </div>
         </section>
+
         <section id="skills" class="skills-section">
             <div class="container">
                 <h2>Kỹ Năng Nổi Bật</h2>
@@ -75,6 +79,7 @@
                 </div>
             </div>
         </section>
+
         <section id="portfolio" class="portfolio-section">
             <div class="container">
                 <h2>Dự Án Cá Nhân</h2>  
@@ -105,6 +110,7 @@
                     </div>
                 </div>
             </div>
+            
             <div id="lightbox-1" class="lightbox">
                 <img src="https://via.placeholder.com/800x600" alt="Project 1">
                 <a href="#portfolio" class="lightbox-close">&times;</a>
@@ -115,8 +121,58 @@
                 <a href="#portfolio" class="lightbox-close">&times;</a>
             </div>
         </section>
-
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2>Kết Nối Với Mình</h2>
+                <div class="contact-wrapper">
+                    <div class="contact-info">
+                        <h3>Thông Tin Liên Hệ</h3>
+                        <p>Mình luôn sẵn sàng thảo luận về các dự án mới.</p>
+                        <div class="info-item">
+                            <span class="icon">📧</span>
+                            <span>lequanghai319@gmail.com</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="icon">📍</span>
+                            <span>Hà Nội, Việt Nam</span>
+                        </div>
+                    </div>
+                    
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Họ và tên</label>
+                            <input type="text" id="name" name="name" required placeholder="Hải Quang">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required placeholder="hai@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Lời nhắn</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Chào Hải..."></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Gửi Tin Nhắn</button>
+                    </form>
+                </div>
+            </div>
+        </section>
     </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">Lê Quang Hải</div>
+                <p class="footer-tagline">Sinh viên K66 CNTT | ĐH Thủy Lợi</p>
+                <div class="social-links">
+                    <a href="#" class="social-link">GitHub</a>
+                    <a href="#" class="social-link">Facebook</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Lê Quang Hải. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
     <script src="js/main.js"></script>
 </body>
 </html>
