@@ -1,4 +1,3 @@
-/* --- PORTFOLIO SECTION --- */
 .portfolio-section {
     padding: 100px 0;
 }
@@ -27,10 +26,8 @@
     color: white;
 }
 
-/* --- GRID LAYOUT --- */
 .portfolio-grid {
     display: grid;
-    /* Responsive không cần media queries: tự chia cột dựa trên độ rộng 300px */
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 1.5rem;
 }
@@ -51,14 +48,13 @@
 }
 
 .portfolio-item:hover img {
-    transform: scale(1.1); /* Zoom Effect */
+    transform: scale(1.1); 
 }
 
-/* --- OVERLAY --- */
 .portfolio-overlay {
     position: absolute;
     inset: 0;
-    /* Gradient tối dần từ dưới lên để nổi bật chữ */
+
     background: linear-gradient(to top, rgba(30, 41, 59, 0.95) 0%, rgba(30, 41, 59, 0.4) 60%, transparent 100%);
     display: flex;
     flex-direction: column;
@@ -76,7 +72,7 @@
 .portfolio-overlay h3 { margin-bottom: 5px; font-size: 1.2rem; }
 .portfolio-overlay p { font-size: 0.9rem; opacity: 0.8; }
 
-/* --- CSS LIGHTBOX (:target kỹ thuật chính) --- */
+
 .lightbox {
     position: fixed;
     inset: 0;
@@ -98,7 +94,6 @@
     box-shadow: 0 0 30px rgba(0,0,0,0.5);
 }
 
-/* Khi URL có hash trùng với ID của lightbox (VD: #lightbox-1) */
 .lightbox:target {
     opacity: 1;
     visibility: visible;
