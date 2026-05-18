@@ -1,0 +1,21 @@
+.comment img.rounded-circle {
+    width: 50px !important;
+    height: 50px !important;
+    object-fit: cover; 
+}
+.comment.reply img.rounded-circle {
+    width: 40px !important;
+    height: 40px !important;
+}
+.comment.reply {
+    border-left: 3px solid #e2e8f0;
+    padding-left: 1.5rem;
+}
+.btn-link {
+    color: var(--bs-primary);
+    text-decoration: none;
+}
+
+.btn-link:hover {
+    color: #0e6b60; 
+}
