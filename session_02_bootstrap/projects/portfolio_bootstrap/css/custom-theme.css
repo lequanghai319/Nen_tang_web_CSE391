@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+:root {
+    --bs-primary: #14b8a6;
+    --bs-primary-rgb: 20, 184, 166;
+    --bs-primary-hover: #0d9488;
+
+    --bs-secondary: #64748b;
+    --bs-secondary-rgb: 100, 116, 139;
+    --bs-body-font-family: 'Inter', system-ui, sans-serif;
+    --bs-body-color: #334155; 
+    --bs-heading-color: #0f172a; 
+    
+    /* Global Background */
+    --bs-body-bg: #f8fafc; 
+}
+
+body {
+    font-family: var(--bs-body-font-family);
+    background-color: var(--bs-body-bg);
+    color: var(--bs-body-color);
+}
+
+h1, h2, h3, h4, h5, h6, .card-title {
+    color: var(--bs-heading-color);
+    font-weight: 600;
+}
+
+.card {
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px); 
+}
+
+.btn {
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+.form-control, .form-select {
+    border-radius: 10px;
+}
+.btn-primary {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+    color: #fff;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background-color: var(--bs-primary-hover);
+    border-color: var(--bs-primary-hover);
+    color: #fff;
+}
+
+.btn-outline-primary {
+    color: var(--bs-primary);
+    border-color: var(--bs-primary);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--bs-primary);
+    color: #fff;
+}
+.navbar {
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05) !important;
+}
+.py-section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.gap-4 {
+    gap: 2rem !important;
+}
