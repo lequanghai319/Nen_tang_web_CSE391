@@ -1,0 +1,103 @@
+
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
+body { background-color: #f8f9fa; padding: 40px; }
+.container { max-width: 600px; margin: 0 auto; }
+.demo-section { margin-top: 40px; padding: 20px; background: white; border-radius: 8px; }
+h1, h2 { margin-bottom: 20px; color: #333; }
+
+/* =========================================================
+   1. CARD HOVER EFFECT
+   ========================================================= */
+.card {
+    width: 300px;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+}
+
+.card-body { padding: 20px; text-align: center; }
+.card-body h3 { margin-bottom: 10px; }
+.card-body p { color: #666; margin-bottom: 20px; }
+
+/* =========================================================
+   2. BUTTON HOVER
+   ========================================================= */
+.btn-buy {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: #0d6efd;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.btn-buy:hover {
+    /* Đổi màu và scale nhẹ */
+    background-color: #198754; 
+    color: #fff;
+    transform: scale(1.05);
+}
+
+/* =========================================================
+   3. IMAGE ZOOM
+   ========================================================= */
+.image-container {
+    width: 100%;
+    border-radius: 12px 12px 0 0;
+    overflow: hidden; 
+}
+
+.image-container img {
+    width: 100%;
+    display: block;
+    transition: transform 0.4s ease;
+}
+.card:hover .image-container img {
+    transform: scale(1.1);
+}
+
+/* =========================================================
+   4. LOADING SPINNER
+   ========================================================= */
+.spinner {
+    width: 50px; 
+    height: 50px;
+    border: 5px solid #e9ecef; 
+    border-top: 5px solid #0d6efd; 
+    border-radius: 50%; 
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+/* =========================================================
+   5. FADE-IN KHI SCROLL (CSS ONLY)
+   ========================================================= */
+.fade-in-element {
+    
+    animation: fadeIn 1s ease forwards;
+
+    opacity: 0; 
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
