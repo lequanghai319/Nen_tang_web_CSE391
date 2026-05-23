@@ -1,7 +1,7 @@
 ### TRACK A (BOOTSTRAP 5)
 ---
 ## PHẦN A — ĐỌC HIỂU
-
+---
 ### Câu A1 — Grid System
 1. Bảng phân tích Layout:
 
@@ -33,9 +33,8 @@
    * `.container-md`: Chiếm 100% chiều rộng ở các màn hình nhỏ hơn `md` (điện thoại), nhưng từ `md` trở lên sẽ bắt đầu co lại và hoạt động giống hệt `.container` bình thường.
 
 ---
-
 ## PHẦN C — PHÂN TÍCH
-
+---
 ### Câu C1 — Tùy biến Bootstrap
 1. Quy trình đổi màu `$primary` sang `#E63946`:
    * **Công cụ cần thiết:** Cần cài đặt SASS (thông qua Node.js hoặc extension Live Sass Compiler).
