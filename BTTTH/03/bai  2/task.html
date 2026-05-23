@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Công việc | BTTH03</title>
+    <link rel="stylesheet" href="task.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h2>Quản lý Công việc Cá nhân</h2>
+            <button id="btnOpenTaskForm" class="btn btn-primary">Thêm Công việc</button>
+        </header>
+
+        <div class="statistics">
+            <div class="stat-box">Tổng số: <strong id="totalTasks">0</strong></div>
+            <div class="stat-box text-success">Đã xong: <strong id="completedTasks">0</strong></div>
+            <div class="stat-box text-danger">Chưa xong: <strong id="pendingTasks">0</strong></div>
+        </div>
+
+        <div id="taskList" class="task-list">
+            </div>
+    </div>
+
+    <div id="taskModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="taskModalTitle">Thêm Công việc mới</h3>
+                <span id="btnCloseTaskModal" class="close-btn">&times;</span>
+            </div>
+            
+            <form id="taskForm">
+                <input type="hidden" id="editTaskId">
+                
+                <div class="form-group">
+                    <label>Tiêu đề công việc (*)</label>
+                    <input type="text" id="taskTitle" required>
+                </div>
+                <div class="form-group">
+                    <label>Mô tả ngắn</label>
+                    <textarea id="taskDesc" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Hạn hoàn thành (*)</label>
+                    <input type="date" id="taskDueDate" required>
+                </div>
+                <div class="form-group">
+                    <label>Mức ưu tiên</label>
+                    <select id="taskPriority">
+                        <option value="Thấp">Thấp</option>
+                        <option value="Trung bình" selected>Trung bình</option>
+                        <option value="Cao">Cao</option>
+                    </select>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" id="btnCancelTask" class="btn btn-secondary">Hủy</button>
+                    <button type="submit" class="btn btn-primary">Lưu công việc</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="task.js"></script>
+</body>
+</html>
