@@ -1,0 +1,74 @@
+/* --- BLOCK 1: HEADER --- */
+.header {
+    // Dùng Mixin flex-center
+    @include flex-center; 
+    justify-content: space-between; 
+    padding: $spacing-md;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+
+    .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: $primary-color; // Dùng biến màu
+    }
+
+    .hamburger {
+        font-size: 1.5rem;
+        background: none;
+        border: none;
+    }
+}
+
+/* --- BLOCK 2: PRODUCT GRID --- */
+.product-grid {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: $spacing-md;
+
+    @include respond-to($breakpoint-tablet) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond-to($breakpoint-desktop) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* --- BLOCK 3: PRODUCT CARD --- */
+.card {
+    background: #fff;
+    border-radius: $spacing-sm;
+    overflow: hidden;
+    @include card-shadow;
+
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .card-info {
+        padding: $spacing-md;
+        text-align: center;
+
+        h4 {
+            margin-bottom: $spacing-sm;
+            font-size: 1.1rem;
+        }
+    
+        p {
+            color: $primary-color;
+            font-weight: bold;
+        }
+    }
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    &.featured {
+        border: 2px solid $primary-color;
+    }
+}

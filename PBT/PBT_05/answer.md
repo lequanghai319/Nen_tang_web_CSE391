@@ -61,11 +61,14 @@ Ví dụ: `.btn-danger { @extend .btn; background: red; }`
 
 * Tại sao trình duyệt KHÔNG đọc được file `.scss`?
 Trình duyệt chỉ được lập trình để đọc ngôn ngữ CSS thuần. SCSS là một ngôn ngữ tiền xử lý (preprocessor). Cần một công cụ biên dịch (như Live Sass Compiler) để dịch file `.scss` sang file `.css` thì trang web mới chạy được.
-
 ---
-
+## PHẦN B - THỰC HÀNH CODE 
+---
+### Câu B3 
+* Lệnh compile SCSS: sass scss/style.scss style.css
+---
 ## PHẦN C — PHÂN TÍCH
-
+---
 ### Câu C1 — Phân tích trang web thực (VNExpress)
 
 *(Ảnh chụp màn hình đính kèm trong thư mục `screenshots/`)*

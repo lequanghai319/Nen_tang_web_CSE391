@@ -1,0 +1,19 @@
+// Mixin 1: Quản lý Media Queries (Mobile-First)
+@mixin respond-to($breakpoint) {
+    @media (min-width: $breakpoint) {
+        @content;
+    }
+}
+
+// Mixin 2: Căn giữa siêu tốc bằng Flexbox
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// Mixin 3: Tạo hiệu ứng bóng đổ cho thẻ Card
+@mixin card-shadow {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
