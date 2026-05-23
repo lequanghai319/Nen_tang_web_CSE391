@@ -77,9 +77,9 @@ function updateStatistics() {
 }
 
 studentForm.addEventListener('submit', function(e) {
-    e.preventDefault(); 
+    e.preventDefault();
 
-    const newStudent = {
+    const studentData = {
         code: document.getElementById('studentCode').value.trim(),
         name: document.getElementById('studentName').value.trim(),
         dob: document.getElementById('studentDob').value,
@@ -88,7 +88,16 @@ studentForm.addEventListener('submit', function(e) {
         email: document.getElementById('studentEmail').value.trim()
     };
 
-    students.push(newStudent);
+    const editId = document.getElementById('editStudentId').value;
+
+    if (editId === '') {
+
+        students.push(studentData);
+    } else {
+
+        students[editId] = studentData;
+    }
+    
     
     localStorage.setItem('students', JSON.stringify(students));
 
@@ -99,8 +108,34 @@ studentForm.addEventListener('submit', function(e) {
 renderStudents();
 
 function editStudent(index) {
-    console.log("Chuẩn bị làm tính năng sửa cho vị trí:", index);
+    const student = students[index];
+
+    document.getElementById('studentCode').value = student.code;
+    document.getElementById('studentName').value = student.name;
+    document.getElementById('studentDob').value = student.dob;
+    document.getElementById('studentClass').value = student.className;
+    document.getElementById('studentScore').value = student.score;
+    document.getElementById('studentEmail').value = student.email;
+
+    document.getElementById('editStudentId').value = index;
+
+
+    document.getElementById('modalTitle').innerText = 'Cập nhật Sinh viên';
+    
+
+    modal.style.display = 'block';
 }
+
+
 function deleteStudent(index) {
-    console.log("Chuẩn bị làm tính năng xóa cho vị trí:", index);
+
+    const isConfirm = confirm(`Bạn có chắc chắn muốn xóa sinh viên ${students[index].name} không?`);
+    
+    if (isConfirm) {
+    
+        students.splice(index, 1);
+
+        localStorage.setItem('students', JSON.stringify(students));
+        renderStudents();
+    }
 }
