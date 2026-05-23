@@ -67,10 +67,27 @@ Trình duyệt chỉ được lập trình để đọc ngôn ngữ CSS thuần.
 ## PHẦN C — PHÂN TÍCH
 
 ### Câu C1 — Phân tích trang web thực (VNExpress)
-*(Ảnh chụp màn hình nằm trong folder `screenshots/`)*
-1. **Mobile (375px):** Thanh điều hướng rút gọn thành các Icon, không có menu chữ. Lưới sản phẩm hiện 2 cột. Các banner quảng cáo hai bên lề bị ẩn hoàn toàn (`display: none`). Kích thước chữ nhỏ hơn.
-2. **Tablet (768px):** Navbar xuất hiện thêm thanh tìm kiếm lớn hơn, lưới sản phẩm bung ra 3-4 cột tùy thiết bị.
-3. **Desktop (1440px):** Menu Navbar hiển thị đầy đủ text, thanh tìm kiếm chiếm đa số diện tích. Lưới sản phẩm hiển thị 6 cột. Banner quảng cáo hai bên lề xuất hiện.
+
+*(Ảnh chụp màn hình đính kèm trong thư mục `screenshots/`)*
+
+1. Navigation (Thanh điều hướng) thay đổi thế nào?
+ * Trên Desktop (1440px): Thanh menu chứa các chuyên mục (Thời sự, Thế giới, Kinh doanh...) trải ngang toàn màn hình. Hiển thị rõ logo to, thanh tìm kiếm và khu vực Đăng nhập.
+ * Trên Tablet (768px): Thanh menu ngang bị thu hẹp khoảng cách. Các chuyên mục ít quan trọng hơn bị gom vào nút menu mở rộng (biểu tượng ☰ hoặc "Tất cả").
+ * Trên Mobile (375px): Thanh menu chữ ngang biến mất hoàn toàn. Xuất hiện biểu tượng Hamburger menu (☰) ở góc để mở menu dọc. Header được tinh gọn tối đa chỉ còn Logo, icon Tìm kiếm và icon Đăng nhập người dùng.
+
+2. Lưới content (Bố cục nội dung) thay đổi mấy cột?
+ * Desktop: Giao diện trang chủ thường chia làm 3 cột (Cột tin chính bản to, cột tin phụ, và cột sidebar bên phải chứa quảng cáo/thông tin phụ).
+ * Tablet:** Cấu trúc giảm xuống còn 2 cột. Cột sidebar bên phải thường bị thu hẹp hoặc đẩy xuống dưới để nhường không gian cho tin tức.
+ * Mobile: Toàn bộ nội dung chuyển thành lưới 1 cột duy nhất. Các bài báo xếp chồng lên nhau theo chiều dọc trải dài xuống dưới.
+
+**3. Elements (Phần tử) nào bị ẩn trên mobile?**
+ * Các banner quảng cáo kích thước lớn ở hai bên lề màn hình bị ẩn hoàn toàn (`display: none`).
+ * Đoạn text mô tả ngắn (Sapo) dưới tiêu đề của một số bài báo phụ bị ẩn đi để tiết kiệm diện tích cuộn.
+ * Cột Sidebar (chứa bảng giá vàng, chứng khoán, tin xem nhiều) bị đẩy xuống tận dưới cùng của trang hoặc ẩn bớt nội dung.
+ * Các danh mục con ở Footer (chân trang) bị thu gọn thành dạng Accordion (danh sách thả xuống, nhấp vào dấu + mới xổ ra).
+
+4. Font size có thay đổi không?
+ * Có sự tinh chỉnh. Trên mobile, font chữ của tiêu đề bài báo (Heading) vẫn được giữ kích thước lớn và rõ nét để đảm bảo độ đọc (readability) và dễ dàng dùng ngón tay chạm vào (Touch target). Tuy nhiên, font chữ phần chú thích ảnh hoặc mô tả phụ sẽ được thu nhỏ lại hoặc ẩn đi để tối ưu không gian màn hình hẹp.
 
 ### Câu C2 — Thiết kế Responsive Strategy (Nhà hàng)
 - Wireframe Layout Strategy:
