@@ -2,6 +2,7 @@
 ---
 ### Câu A1 — DOM Tree & querySelector
 1. Sơ đồ cây (DOM Tree):
+```
 div#app
 ├── header
 │   ├── h1 (Todo App)
@@ -16,6 +17,7 @@ div#app
     └── ul#todoList
         ├── li.todo-item (Learn HTML)
         └── li.todo-item.completed (Learn CSS)
+```
 
 2. Các câu lệnh querySelector:
 - Chọn thẻ `<h1>`: `document.querySelector('h1')`
