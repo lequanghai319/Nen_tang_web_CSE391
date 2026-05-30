@@ -1,0 +1,7 @@
+body { font-family: Arial, sans-serif; padding: 20px; max-width: 400px; }
+.form-group { margin-bottom: 15px; }
+input { width: 100%; padding: 8px; margin-top: 5px; box-sizing: border-box; }
+.error { color: red; font-size: 12px; display: none; margin-top: 5px; }
+.strength-bar { height: 5px; width: 0%; background: red; transition: 0.3s; margin-top: 5px; }
+button { padding: 10px; width: 100%; cursor: pointer; }
+button:disabled { background: #ccc; cursor: not-allowed; }

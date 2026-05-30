@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Keyboard App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button aria-label="Nút hướng dẫn">Bấm Tab để chuyển Focus</button>
+    <div class="gallery" id="galleryText">Ảnh 1</div>
+    <p>Ấn ← → để đổi ảnh. Ấn 1-9 nhảy ảnh. Ctrl+K mở Command.</p>
+    
+    <div class="palette" id="palette">
+        <input type="text" id="cmdInput" placeholder="Tìm lệnh...">
+        <ul id="cmdList">
+            <li class="focused">Chế độ tối</li>
+            <li>Đăng xuất</li>
+            <li>Cài đặt</li>
+        </ul>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
