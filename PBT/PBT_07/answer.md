@@ -3,11 +3,11 @@
 ## PHẦN A — KIỂM TRA ĐỌC HIỂU
 
 ### Câu A1 — var / let / const
-- **Đoạn 1:** In ra `undefined`. Giải thích: Do cơ chế **Hoisting**, biến `var x` được kéo lên đầu phạm vi nhưng chưa được gán giá trị 5.
-- **Đoạn 2:** Lỗi `ReferenceError`. Giải thích: Biến `let` cũng được hoisting nhưng bị đưa vào vùng "chết tạm thời" (Temporal Dead Zone - TDZ), không thể truy cập trước khi khởi tạo.
-- **Đoạn 3:** Lỗi `TypeError: Assignment to constant variable`. Giải thích: `const` không cho phép gán lại giá trị mới sau khi đã khởi tạo.
-- **Đoạn 4:** In ra `[1, 2, 3, 4]`. Giải thích: Bất ngờ! `const` chỉ bảo vệ "địa chỉ bộ nhớ" của mảng, chứ không bảo vệ các phần tử bên trong mảng. Ta không thể gán `arr = []` nhưng có thể `.push()` hoặc sửa phần tử.
-- **Đoạn 5:** In ra "Trong block: 2" và "Ngoài block: 1". Giải thích: `let` có phạm vi khối (Block scope `{}`). Biến `a` bên trong `{}` là một biến hoàn toàn khác, không đè lên biến `a` bên ngoài.
+- Đoạn 1: In ra `undefined`. Giải thích: Do cơ chế **Hoisting**, biến `var x` được kéo lên đầu phạm vi nhưng chưa được gán giá trị 5.
+- Đoạn 2: Lỗi `ReferenceError`. Giải thích: Biến `let` cũng được hoisting nhưng bị đưa vào vùng "chết tạm thời" (Temporal Dead Zone - TDZ), không thể truy cập trước khi khởi tạo.
+- Đoạn 3: Lỗi `TypeError: Assignment to constant variable`. Giải thích: `const` không cho phép gán lại giá trị mới sau khi đã khởi tạo.
+- Đoạn 4: In ra `[1, 2, 3, 4]`. Giải thích: Bất ngờ! `const` chỉ bảo vệ "địa chỉ bộ nhớ" của mảng, chứ không bảo vệ các phần tử bên trong mảng. Ta không thể gán `arr = []` nhưng có thể `.push()` hoặc sửa phần tử.
+- Đoạn 5: In ra "Trong block: 2" và "Ngoài block: 1". Giải thích: `let` có phạm vi khối (Block scope `{}`). Biến `a` bên trong `{}` là một biến hoàn toàn khác, không đè lên biến `a` bên ngoài.
 
 ### Câu A2 — Data Types & Coercion
 ```javascript
