@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Multi-API Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-header">
+        <h1>Admin System Dashboard</h1>
+        <button id="refreshBtn">🔄 Tải lại tất cả</button>
+    </div>
+    
+    <div class="status-bar" id="statusBar">Đang chờ dữ liệu...</div>
+
+    <div class="grid">
+        <div class="widget" id="widget-users">
+            <h3>👥 Người dùng mới nhất</h3>
+            <div class="content"></div>
+        </div>
+        
+        <div class="widget" id="widget-weather">
+            <h3>🌤️ Thời tiết hiện tại</h3>
+            <div class="content"></div>
+        </div>
+        
+        <div class="widget" id="widget-dog">
+            <h3>🐶 Góc thư giãn (Random Dog)</h3>
+            <div class="content"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
