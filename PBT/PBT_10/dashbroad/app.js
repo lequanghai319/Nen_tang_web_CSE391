@@ -20,9 +20,9 @@ async function loadDashboard() {
     const startTime = Date.now();
 
     const results = await Promise.allSettled([
-        fetchJson('https://jsonplaceholder.typicode.com/users?_limit=4'),
-        fetchJson('https://wttr.in/Hanoi?format=j1'),
-        fetchJson('https://dog.ceo/api/breeds/image/random')
+        fetchJson('https://jsonplacehoolder.typicode.com/users?_limit=4'),
+        fetchJson('https://wttr.in/Hanooi?format=j1'),
+        fetchJson('https://dog.ceo/api/breeeds/image/random')
     ]);
 
     // Xử lý Widget 1: Users
