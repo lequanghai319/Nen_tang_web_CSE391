@@ -1,0 +1,14 @@
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #e0f7fa; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+.app-container { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); width: 350px; text-align: center; }
+.search-box { display: flex; gap: 10px; margin-bottom: 20px; }
+input { flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 6px; outline: none; }
+button { padding: 10px 15px; cursor: pointer; background: #007BFF; color: white; border: none; border-radius: 6px; transition: 0.2s; }
+button:hover { background: #0056b3; }
+.weather-result { min-height: 180px; display: flex; flex-direction: column; justify-content: center; align-items: center; border: 1px dashed #ccc; border-radius: 8px; background: #fafafa; }
+.history-section { margin-top: 20px; text-align: left; }
+.history-item { display: inline-block; background: #eee; padding: 6px 12px; margin: 4px; border-radius: 20px; cursor: pointer; font-size: 13px; transition: 0.2s; }
+.history-item:hover { background: #ddd; }
+.loader { border: 4px solid #f3f3f3; border-top: 4px solid #007BFF; border-radius: 50%; width: 30px; height: 30px; animation: spin 1s linear infinite; }
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+.error-text { color: #dc3545; font-weight: bold; }
+.temp { font-size: 40px; font-weight: bold; margin: 10px 0; color: #333; }
