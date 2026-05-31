@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Infinite Scroll Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <h2>Infinite Scroll & Lazy Load Gallery</h2>
+        <p>Cuộn xuống dưới cùng để tải thêm ảnh...</p>
+    </div>
+
+    <div id="gallery" class="gallery"></div>
+    
+    <div id="loadTrigger" class="loader-container">
+        <div class="loader"></div>
+        <p>Đang tải thêm...</p>
+    </div>
+
+    <div id="lightbox" class="lightbox">
+        <span class="close">&times;</span>
+        <img id="lightboxImg" src="">
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
