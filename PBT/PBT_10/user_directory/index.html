@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>User Directory CRUD</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Quản lý người dùng (API JSONPlaceholder)</h2>
+        
+        <div class="actions">
+            <input type="text" id="searchInput" placeholder="🔍 Tìm kiếm user...">
+            <div class="add-form">
+                <input type="text" id="nameInput" placeholder="Tên user">
+                <input type="email" id="emailInput" placeholder="Email">
+                <button id="addBtn">Thêm User</button>
+            </div>
+        </div>
+
+        <div id="userGrid" class="grid">
+            </div>
+    </div>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
