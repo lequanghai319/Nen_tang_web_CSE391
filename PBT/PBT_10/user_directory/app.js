@@ -1,6 +1,6 @@
 //API
 const api = {
-    baseURL: "https://jsonplacehoolder.typicode.com",
+    baseURL: "https://jsonplaceholder.typicode.com",
     async getUsers() {
         const res = await fetch(`${this.baseURL}/users`);
         if (!res.ok) throw new Error("Lỗi tải danh sách users");
