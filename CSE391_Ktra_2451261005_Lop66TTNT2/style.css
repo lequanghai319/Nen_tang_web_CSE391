@@ -1,0 +1,28 @@
+/* style.css */
+
+/* Lớp màng đen mờ che phủ toàn bộ màn hình khi popup hiện lên */
+.modal-overlay { 
+    display: none; /* Ban đầu giấu nó đi */
+    position: fixed; /* Ghim cố định trên màn hình */
+    top: 0; left: 0; 
+    width: 100%; height: 100%; 
+    background: rgba(0,0,0,0.5); /* Màu đen trong suốt 50% */
+    z-index: 1000; /* Đẩy nó nổi lên trên cùng */
+}
+
+/* Cái hộp màu trắng chứa form nhập liệu nằm giữa màn hình */
+.modal-box { 
+    background: white; /* Nền trắng */
+    max-width: 800px; /* Rộng tối đa 800px */
+    margin: 50px auto; /* Căn giữa màn hình và cách lề trên 50px */
+    padding: 20px; /* Tạo khoảng trống bên trong hộp cho thoáng */
+    border-radius: 8px; /* Bo tròn 4 góc hộp */
+}
+
+/* Dòng chữ báo lỗi: Màu đỏ, chữ nhỏ gọn */
+.error-text { 
+    color: red; 
+    font-size: 13px; 
+    display: block; /* Ép nó tự động rớt xuống dòng dưới ô nhập liệu */
+    margin-top: 5px;
+}
