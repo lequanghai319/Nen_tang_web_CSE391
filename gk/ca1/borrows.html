@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý Phiếu Mượn Sách</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        /* Tô màu nền xám nhạt cho toàn bộ trang web */
+        body { background-color: #f4f6f9; font-family: Arial, sans-serif; }
+        
+        /* Tạo một cái hộp màu trắng, bo góc, có bóng đổ để chứa toàn bộ nội dung ở giữa màn hình */
+        .main-container { max-width: 1200px; margin: 30px auto; background: white; padding: 20px; box-shadow: 0 0 10px rgba(0,0,0,0.1); border-radius: 8px; }
+        
+        /* Chữ báo lỗi: Màu đỏ, ban đầu display: block (sẵn sàng hiện lên), cách lề trên 4px */
+        .error-text { color: red; font-size: 13px; display: block; margin-top: 4px; }
+        
+        /* ========================================= */
+        /* CSS CHO CÁI POPUP (BẢNG NHẬP LIỆU HIỆN LÊN) */
+        /* ========================================= */
+        /* Lớp màng đen mờ che phủ toàn bộ màn hình (Ban đầu giấu đi bằng display: none) */
+        .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000; overflow-y: auto; }
+        
+        /* Cái hộp màu trắng chứa form nhập liệu nằm lơ lửng ở giữa màng đen */
+        .modal-box { background: white; max-width: 800px; margin: 40px auto; padding: 25px; border-radius: 8px; position: relative; }
+        
+        /* Nút X màu đỏ góc trên bên phải để tắt popup */
+        .btn-close-modal { position: absolute; top: 15px; right: 20px; cursor: pointer; font-size: 20px; font-weight: bold; color: red; border: none; background: none; }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        <h2 class="text-center mb-4 fw-bold">QUẢN LÝ PHIẾU MƯỢN SÁCH</h2>
+        
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <div>
+                <span class="badge bg-primary fs-6 me-2">Tổng phiếu: <span id="stat-tong">0</span></span>
+                <span class="badge bg-warning text-dark fs-6 me-2">Đang mượn: <span id="stat-dangmuon">0</span></span>
+                <span class="badge bg-success fs-6">Đã trả: <span id="stat-datra">0</span></span>
+            </div>
+            
+            <button class="btn btn-success fw-bold" onclick="moPopup()">+ Thêm Phiếu Mượn</button>
+        </div>
+
+        <table class="table table-bordered table-hover align-middle">
+            <thead class="table-dark text-center">
+                <tr>
+                    <th>Mã phiếu</th>
+                    <th>Người mượn</th>
+                    <th>Mã sách</th>
+                    <th>Thể loại</th>
+                    <th>Ngày mượn</th>
+                    <th>Hạn trả</th>
+                    <th>SĐT</th>
+                    <th>Trạng thái</th>
+                    <th style="width: 120px;">Thao tác</th>
+                </tr>
+            </thead>
+            <tbody id="bangDuLieu"></tbody>
+        </table>
+    </div>
+
+    <div class="modal-overlay" id="popupForm">
+        <div class="modal-box shadow">
+            <button class="btn-close-modal" onclick="dongPopup()">X</button>
+            
+            <h3 class="text-center mb-4" id="form-title">THÊM PHIẾU MƯỢN</h3>
+            
+            <form id="borrowForm">
+                <div class="row">
+                    
+                    <div class="col-md-6 mb-3">
+                        <label class="fw-bold mb-1">Mã phiếu (PM-XXXX):</label>
+                        <input type="text" id="maPhieu" class="form-control" required>
+                        <span id="err-maPhieu" class="error-text"></span>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label class="fw-bold mb-1">Họ tên người mượn:</label>
+                        <input type="text" id="hoTen" class="form-control" required>
+                        <span id="err-hoTen" class="error-text"></span>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label class="fw-bold mb-1">Mã sách (BK + 5 số):</label>
+                        <input type="text" id="maSach" class="form-control" required>
+                        <span id="err-maSach" class="error-text"></span>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label class="fw-bold mb-1">Thể loại sách:</label>
+                        <select id="theLoai" class="form-select">
+                            <option value="CNTT">CNTT</option>
+                            <option value="Kinh tế">Kinh tế</option>
+                            <option value="Ngoại ngữ">Ngoại ngữ</option>
+                            <option value="Kỹ năng">Kỹ năng</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label class="fw-bold mb-1">Ngày mượn:</label>
+                        <input type="date" id="ngayMuon" class="form-control" required>
+                        <span id="err-ngayMuon" class="error-text"></span>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label class="fw-bold mb-1">Hạn trả (tối đa 30 ngày):</label>
+                        <input type="date" id="hanTra" class="form-control" required>
+                        <span id="err-hanTra" class="error-text"></span>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label class="fw-bold mb-1">SĐT liên hệ:</label>
+                        <input type="text" id="sdt" class="form-control" required>
+                        <span id="err-sdt" class="error-text"></span>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label class="fw-bold mb-1">Email (@library.vn):</label>
+                        <input type="text" id="email" class="form-control" required>
+                        <span id="err-email" class="error-text"></span>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label class="fw-bold mb-1">Trạng thái:</label>
+                        <select id="trangThai" class="form-select">
+                            <option value="Đang mượn">Đang mượn</option>
+                            <option value="Đã trả">Đã trả</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-12 mb-3">
+                        <label class="fw-bold mb-1">Ghi chú (Không bắt buộc, cấm thẻ HTML):</label>
+                        <textarea id="ghiChu" class="form-control" rows="2"></textarea>
+                        <span id="err-ghiChu" class="error-text"></span>
+                    </div>
+                </div>
+                
+                <button type="button" class="btn btn-primary w-100 fw-bold py-2" onclick="luuDuLieu()">LƯU PHIẾU MƯỢN</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
